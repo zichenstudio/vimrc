@@ -71,6 +71,8 @@ set clipboard=unnamedplus
 set clipboard=unnamed
 " 出错发出视觉提示
 set visualbell
+" 光标在屏幕边缘留5行
+set scrolloff=5
 if has("gui_running")
     " Gvim字体
     set guifont=JetBrains\ Mono:h11
@@ -191,8 +193,8 @@ function! ToggleAbsoluteLineNumbers()
     set nonumber
   endif
 endfunction
-" 绑定 F2 键为切换绝对行号的快捷键
-noremap <F2> :call ToggleAbsoluteLineNumbers()<CR>
+" 绑定<F2>键为切换绝对行号的快捷键
+nmap <F2> :call ToggleAbsoluteLineNumbers()<CR>
 
 " 定义一个函数来切换相对行号的显示和隐藏
 function! ToggleRelativeLineNumbers()
@@ -202,6 +204,9 @@ function! ToggleRelativeLineNumbers()
     set number norelativenumber
   endif
 endfunction
-" 绑定 F3 键为切换相对行号的快捷键
-noremap <F3> :call ToggleRelativeLineNumbers()<CR>
-
+" 绑定<F3>键为切换相对行号的快捷键
+nmap <F3> :call ToggleRelativeLineNumbers()<CR>
+" 输入模式下把mk换成<ESC>
+imap mk <Esc>
+" 绑定//为关闭高亮
+nmap // :set hlsearch!<CR>
