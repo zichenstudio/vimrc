@@ -46,7 +46,7 @@ set ignorecase
 " 命令模式下，底部操作指令按下 Tab 键自动补全。第一次按下 Tab，会显示所有匹配的操作指令的清单；第二次按下 Tab，会依次选择各个指令
 set wildmenu
 set wildmode=longest:list,full
-" 取消备份
+"取消备份
 set noundofile
 set nobackup
 " 启用真色彩
@@ -93,17 +93,17 @@ endif
 "
 " 插件管理
 call plug#begin()
-    Plug 'preservim/nerdtree'
-    Plug 'itchyny/lightline.vim'
-    Plug 'Yggdroot/indentLine'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'tomasr/molokai'
-    Plug 'ghifarit53/tokyonight-vim'
-    Plug 'luochen1990/rainbow'
-    Plug 'itchyny/vim-cursorword'
-    Plug 'lifepillar/vim-solarized8'
-    Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'preservim/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'tomasr/molokai'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'luochen1990/rainbow'
+Plug 'itchyny/vim-cursorword'
+Plug 'lifepillar/vim-solarized8'
+Plug 'chriskempson/vim-tomorrow-theme'
 call plug#end()
 " 插件和主题的配置
 "
@@ -111,7 +111,7 @@ call plug#end()
 " 主题
 " 主题设置
 " molokai
-" colorscheme molokai
+colorscheme molokai
 "
 " tokyonight
 let g:tokyonight_style = 'night' " 选项: night, storm
@@ -128,7 +128,7 @@ set background=dark
 " Tomorrow-Night
 " colorscheme Tomorrow-Night
 " Tomorrow-Night-Blue
-colorscheme Tomorrow-Night-Blue
+" colorscheme Tomorrow-Night-Blue
 " Tomorrow-Night-Bright
 " colorscheme Tomorrow-Night-Bright
 " Tomorrow-Night-Eighties
@@ -156,15 +156,15 @@ set updatetime=1000
 set shortmess+=c
 " <Tab>键自动补全
 inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
+            \ coc#pum#visible() ? coc#pum#next(1) :
+            \ CheckBackspace() ? "\<Tab>" :
+            \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+            \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 " 用使用 [g 和 ]g 来寻找上、下一个报错
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -173,36 +173,36 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 autocmd CursorHold * silent call CocActionAsync('highlight')
 " Coc.nvim自动安装插件
 let g:coc_global_extensions = [
-    \'coc-json',
-    \'coc-vimlsp',
-    \'coc-eslint',
-    \'coc-marketplace',
-    \'coc-tsserver',
-    \'coc-html',
-    \'coc-css',
-    \'coc-phpls',
-    \'coc-markdownlint']
+            \'coc-json',
+            \'coc-vimlsp',
+            \'coc-eslint',
+            \'coc-marketplace',
+            \'coc-tsserver',
+            \'coc-html',
+            \'coc-css',
+            \'coc-phpls',
+            \'coc-markdownlint']
 "
 "
 " 按键
 " 定义一个函数来切换绝对行号的显示和隐藏
 function! ToggleAbsoluteLineNumbers()
-  if &number == 0
-    set number
-  else
-    set nonumber
-  endif
+    if &number == 0
+        set number
+    else
+        set nonumber
+    endif
 endfunction
 " 绑定<F2>键为切换绝对行号的快捷键
 nmap <F2> :call ToggleAbsoluteLineNumbers()<CR>
 
 " 定义一个函数来切换相对行号的显示和隐藏
 function! ToggleRelativeLineNumbers()
-  if &relativenumber == 0
-    set relativenumber
-  else
-    set number norelativenumber
-  endif
+    if &relativenumber == 0
+        set relativenumber
+    else
+        set number norelativenumber
+    endif
 endfunction
 " 绑定<F3>键为切换相对行号的快捷键
 nmap <F3> :call ToggleRelativeLineNumbers()<CR>
@@ -210,3 +210,5 @@ nmap <F3> :call ToggleRelativeLineNumbers()<CR>
 imap mk <Esc>
 " 绑定//为关闭高亮
 nmap // :set hlsearch!<CR>
+" 格式化全部代码
+nmap rt gg=G
