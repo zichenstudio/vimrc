@@ -215,6 +215,5 @@ nmap <F3> :set relativenumber!<CR>
 imap mk <Esc>
 " 绑定//为关闭高亮
 nmap // :set hlsearch!<CR>
-nmap / :set hlsearch<CR>/
 " 格式化全部代码
 nmap rt gg=G
