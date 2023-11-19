@@ -127,6 +127,7 @@ Plug 'luochen1990/rainbow'
 Plug 'itchyny/vim-cursorword'
 Plug 'lifepillar/vim-solarized8'
 Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 call plug#end()
 " 插件和主题的配置
 "
@@ -155,7 +156,7 @@ set background=dark
 " Tomorrow-Night-Bright
 " colorscheme Tomorrow-Night-Bright
 " Tomorrow-Night-Eighties
-"colorscheme Tomorrow-Night-Eighties
+" colorscheme Tomorrow-Night-Eighties
 
 " 插件
 "
@@ -212,9 +213,11 @@ let g:coc_global_extensions = [
 nmap <F2> :set number!<CR>
 " 绑定<F3>键为切换相对行号开关的快捷键
 nmap <F3> :set relativenumber!<CR>
-" 输入模式下把mk换成<ESC>
-imap mk <Esc>
+" 输入模式下把jk换成<ESC>
+imap jk <Esc>
 " 绑定//为关闭高亮
 nmap // :set hlsearch!<CR>
 " 格式化全部代码
 nmap rt gg=G
+" Markdown预览开关
+nmap md :MarkdownPreviewToggle<CR>
