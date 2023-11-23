@@ -98,7 +98,7 @@ set visualbell
 set scrolloff=5
 if has("gui_running")
     " Gvim字体
-    set guifont=JetBrains\ Mono:h11
+    set guifont=Hack:h11
     " 隐藏左侧垂直滚动条
     set guioptions-=l
     " 隐藏右侧垂直滚动条
@@ -217,7 +217,5 @@ nmap <F3> :set relativenumber!<CR>
 imap jk <Esc>
 " 绑定//为关闭高亮
 nmap // :set hlsearch!<CR>
-" 格式化全部代码
-nmap rt gg=G
 " Markdown预览开关
 nmap md :MarkdownPreviewToggle<CR>
