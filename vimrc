@@ -165,7 +165,7 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "
 " NERDTree配置
 " 将F7设置为开关NERDTree的快捷键
-map <F7> :NERDTreeToggle<cr>
+noremap <F7> :NERDTreeToggle<cr>
 " 修改树的显示图标
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
@@ -192,8 +192,8 @@ function! CheckBackspace() abort
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 " 用使用 [g 和 ]g 来寻找上、下一个报错
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+noremap <silent> [g <Plug>(coc-diagnostic-prev)
+noremap <silent> ]g <Plug>(coc-diagnostic-next)
 " 高亮鼠标所在的同一个词汇
 autocmd CursorHold * silent call CocActionAsync('highlight')
 " Coc.nvim自动安装插件
@@ -210,12 +210,13 @@ let g:coc_global_extensions = [
 "
 " 按键
 " 绑定<F2>键为切换绝对行号开关的快捷键
-nmap <F2> :set number!<CR>
+noremap <F2> :set number!<CR>
 " 绑定<F3>键为切换相对行号开关的快捷键
-nmap <F3> :set relativenumber!<CR>
+noremap <F3> :set relativenumber!<CR>
 " 输入模式下把jk换成<ESC>
-imap jk <Esc>
+inoremap jk <Esc>
 " 绑定//为关闭高亮
-nmap // :set hlsearch!<CR>
+noremap // :set hlsearch!<CR>
+nnoremap / :set hlsearch<CR> /
 " Markdown预览开关
-nmap md :MarkdownPreviewToggle<CR>
+noremap md :MarkdownPreviewToggle<CR>
