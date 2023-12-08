@@ -1,25 +1,11 @@
-"          _____                    _____                    _____                    _____                    _____          
-"         /\    \                  /\    \                  /\    \                  /\    \                  /\    \         
-"        /::\____\                /::\    \                /::\____\                /::\    \                /::\    \        
-"       /:::/    /                \:::\    \              /::::|   |               /::::\    \              /::::\    \       
-"      /:::/    /                  \:::\    \            /:::::|   |              /::::::\    \            /::::::\    \      
-"     /:::/    /                    \:::\    \          /::::::|   |             /:::/\:::\    \          /:::/\:::\    \     
-"    /:::/____/                      \:::\    \        /:::/|::|   |            /:::/__\:::\    \        /:::/  \:::\    \    
-"    |::|    |                       /::::\    \      /:::/ |::|   |           /::::\   \:::\    \      /:::/    \:::\    \   
-"    |::|    |     _____    ____    /::::::\    \    /:::/  |::|___|______    /::::::\   \:::\    \    /:::/    / \:::\    \  
-"    |::|    |    /\    \  /\   \  /:::/\:::\    \  /:::/   |::::::::\    \  /:::/\:::\   \:::\____\  /:::/    /   \:::\    \ 
-"    |::|    |   /::\____\/::\   \/:::/  \:::\____\/:::/    |:::::::::\____\/:::/  \:::\   \:::|    |/:::/____/     \:::\____\
-"    |::|    |  /:::/    /\:::\  /:::/    \::/    /\::/    / ~~~~~/:::/    /\::/   |::::\  /:::|____|\:::\    \      \::/    /
-"    |::|    | /:::/    /  \:::\/:::/    / \/____/  \/____/      /:::/    /  \/____|:::::\/:::/    /  \:::\    \      \/____/ 
-"    |::|____|/:::/    /    \::::::/    /                       /:::/    /         |:::::::::/    /    \:::\    \             
-"    |:::::::::::/    /      \::::/____/                       /:::/    /          |::|\::::/    /      \:::\    \            
-"    \::::::::::/____/        \:::\    \                      /:::/    /           |::| \::/____/        \:::\    \           
-"     ~~~~~~~~~~               \:::\    \                    /:::/    /            |::|  ~|               \:::\    \          
-"                               \:::\    \                  /:::/    /             |::|   |                \:::\    \         
-"                                \:::\____\                /:::/    /              \::|   |                 \:::\____\        
-"                                 \::/    /                \::/    /                \:|   |                  \::/    /        
-"                                  \/____/                  \/____/                  \|___|                   \/____/         
-"-----------------------------------------------------------------------------------------------------------------------------
+" ___      ___  ___   _____ ______    ________   ________     
+"|\  \    /  /||\  \ |\   _ \  _   \ |\   __  \ |\   ____\    
+"\ \  \  /  / /\ \  \\ \  \\\__\ \  \\ \  \|\  \\ \  \___|    
+" \ \  \/  / /  \ \  \\ \  \\|__| \  \\ \   _  _\\ \  \       
+"  \ \    / /    \ \  \\ \  \    \ \  \\ \  \\  \|\ \  \____  
+"   \ \__/ /      \ \__\\ \__\    \ \__\\ \__\\ _\ \ \_______\
+"    \|__|/        \|__| \|__|     \|__| \|__|\|__| \|_______|
+"-------------------------------------------------------------
 
 " 基本
 "
@@ -31,7 +17,6 @@ set relativenumber
 set nowrap
 " 高亮(自动识别)
 syntax enable
-syntax on
 " 支持鼠标
 set mouse=a
 " 与上一行保持一致的缩进
@@ -48,20 +33,22 @@ set shiftwidth=4
 set softtabstop=4
 " 编码识别顺序
 set encoding=utf8
-set termencoding=utf-8
-set fileencodings=utf-8,ucs-bom,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+" 默认换行格式
+set fileformats=unix
 " Backspace到上一行继续删除
-set backspace=2
+set backspace=indent,eol,start
 " 永久显示换行符
 set list
 " 状态栏的显示(0不显示，1多窗口时显示，2显示)
 set laststatus=2
+" 显示标尺(右下角显示当前光标位置)
+set ruler
 " 光标遇到括号时，括号的另一半自动高亮
 set showmatch
 " 命令行模式下，在底部显示当前键入的指令。例如键入dd删除一行时，键入第一个d，底部右侧显示d，完全键入dd时，操作完成，底部显示消失
 set showcmd
-" 高亮显示搜索结果
-set hlsearch
+" 不高亮显示搜索结果
+set nohlsearch
 " 键入时，自动跳转到第一个匹配结果
 set incsearch
 " 搜索忽略大小写
@@ -69,9 +56,10 @@ set ignorecase
 " 命令模式下，底部操作指令按下 Tab 键自动补全。第一次按下 Tab，会显示所有匹配的操作指令的清单；第二次按下 Tab，会依次选择各个指令
 set wildmenu
 set wildmode=longest:list,full
-"取消备份
-set noundofile
+" 取消备份
 set nobackup
+" 不使用撤销文件
+set noundofile
 " 启用真色彩
 set termguicolors
 " 启用256色
@@ -113,7 +101,7 @@ if has("gui_running")
     set guioptions-=T
 endif
 "
-"
+"==================================================
 " 插件管理
 call plug#begin()
 Plug 'preservim/nerdtree'
@@ -122,42 +110,17 @@ Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomasr/molokai'
-Plug 'ghifarit53/tokyonight-vim'
 Plug 'luochen1990/rainbow'
 Plug 'itchyny/vim-cursorword'
-Plug 'lifepillar/vim-solarized8'
-Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 call plug#end()
 " 插件和主题的配置
 "
 "
 " 主题
-" 主题设置
-" molokai
-colorscheme molokai
+" colorscheme molokai
+colorscheme zaibatsu
 "
-" tokyonight
-let g:tokyonight_style = 'night' " 选项: night, storm
-let g:tokyonight_enable_italic = 1
-" colorscheme tokyonight
-"
-" solarized8
-set background=dark
-" colorscheme solarized8
-"
-" Tomorrow
-" Tomorrow
-" colorscheme Tomorrow
-" Tomorrow-Night
-" colorscheme Tomorrow-Night
-" Tomorrow-Night-Blue
-" colorscheme Tomorrow-Night-Blue
-" Tomorrow-Night-Bright
-" colorscheme Tomorrow-Night-Bright
-" Tomorrow-Night-Eighties
-" colorscheme Tomorrow-Night-Eighties
-
 " 插件
 "
 " rainbow
@@ -210,13 +173,21 @@ let g:coc_global_extensions = [
 "
 " 按键
 " 绑定<F2>键为切换绝对行号开关的快捷键
-noremap <F2> :set number!<CR>
+map <F2> :set number!<CR>
 " 绑定<F3>键为切换相对行号开关的快捷键
-noremap <F3> :set relativenumber!<CR>
+map <F3> :set relativenumber!<CR>
 " 输入模式下把jk换成<ESC>
-inoremap jk <Esc>
+imap jk <Esc>
 " 绑定//为关闭高亮
-noremap // :set hlsearch!<CR>
-nnoremap / :set hlsearch<CR> /
-" Markdown预览开关
-noremap md :MarkdownPreviewToggle<CR>
+map // :set hlsearch!<CR>
+" 搜索时自动打开高亮
+nmap / :set hlsearch<CR> /
+" 绑定md为Markdown预览开关
+nmap md :MarkdownPreviewToggle<CR>
+" 绑定<Ctrl>+A为全选
+map <C-a> ggVG
+" 窗口移动方式映射
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
