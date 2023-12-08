@@ -1,0 +1,38 @@
+# VIMRC
+大约在2023年4月，我开始使用Vim，这个储存库存储了我的配置。
+
+## Fonts
+
+[Hack](https://github.com/source-foundry/Hack)
+
+## Plugs
+
+我使用[vim-plug](https://github.com/junegunn/vim-plug)作为插件管理器。
+
+使用了以下插件
+
+- [The NERDTree](https://github.com/preservim/nerdtree)
+- [lightline.vim](https://github.com/itchyny/lightline.vim)
+- [indentLine](https://github.com/Yggdroot/indentLine)
+- [coc.nvim](https://github.com/neoclide/coc.nvim)
+- [Auto Pairs](https://github.com/jiangmiao/auto-pairs)
+- [Rainbow Parentheses Improved](https://github.com/luochen1990/rainbow)
+- [vim-cursorword](https://github.com/itchyny/vim-cursorword)
+- [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim)
+
+## ColorScheme
+
+- [Molokai](https://github.com/tomasr/molokai)
+
+我在配置中使用`colorscheme zaibatsu`并把`colorscheme molokai`注释了，你可以自己打开。
+
+## Mappings
+
+- `<F7>`作为侧边栏
+- `<F2>`开关绝对行号
+- `<F3>`开关相对行号
+- `jk`是`<Esc>`
+- `//`是高亮开关
+- `md`是Markdown预览
+- `<Ctrl>+A`是全选
+- `<Ctrl>+j/k/h/l`是`<Ctrl>+w+j/k/h/l``
