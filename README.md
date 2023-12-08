@@ -35,4 +35,4 @@
 - `//`是高亮开关
 - `md`是Markdown预览
 - `<Ctrl>+A`是全选
-- `<Ctrl>+j/k/h/l`是`<Ctrl>+w+j/k/h/l``
+- `<Ctrl>+j/k/h/l`是`<Ctrl>+w+j/k/h/l`
