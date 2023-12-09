@@ -195,5 +195,5 @@ noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 " 绑定<leader>+w为保存(强制)
 noremap <leader>w :w!<CR>
-" 绑定<leader>+z为保存并退出
+" 绑定<leader>+z为保存并退出(强制)
 noremap <leader>z :x!<CR>
