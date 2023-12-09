@@ -172,22 +172,28 @@ let g:coc_global_extensions = [
             \'coc-markdownlint']
 "
 " 按键
+" <leader>绑定
+let mapleader="\<space>"
 " 绑定<F2>键为切换绝对行号开关的快捷键
-map <F2> :set number!<CR>
+noremap <F2> :set number!<CR>
 " 绑定<F3>键为切换相对行号开关的快捷键
-map <F3> :set relativenumber!<CR>
+noremap <F3> :set relativenumber!<CR>
 " 输入模式下把jk换成<ESC>
-imap jk <Esc>
+inoremap jk <Esc>
 " 绑定//为高亮开关
-map // :set hlsearch!<CR>
+noremap // :set hlsearch!<CR>
 " 搜索时自动打开高亮
-nmap / :set hlsearch<CR> /
+noremap / :set hlsearch<CR> /
 " 绑定md为Markdown预览开关
-nmap md :MarkdownPreviewToggle<CR>
+nnoremap md :MarkdownPreviewToggle<CR>
 " 绑定<Ctrl>+A为全选
-map <C-a> ggVG
+noremap <C-a> ggVG
 " 窗口移动方式映射
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+" 绑定<leader>+w为保存(强制)
+noremap <leader>w :w!<CR>
+" 绑定<leader>+z为保存并退出
+noremap <leader>z :x!<CR>
