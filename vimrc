@@ -127,8 +127,6 @@ colorscheme zaibatsu
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "
 " NERDTree配置
-" 将F7设置为开关NERDTree的快捷键
-noremap <F7> :NERDTreeToggle<cr>
 " 修改树的显示图标
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
@@ -197,3 +195,5 @@ noremap <C-l> <C-W>l
 noremap <leader>w :w!<CR>
 " 绑定<leader>+z为保存并退出(强制)
 noremap <leader>z :x!<CR>
+" 绑定<leader>+n为NERDTree开关
+noremap <leader>n :NERDTreeToggle<CR>
