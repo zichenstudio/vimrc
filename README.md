@@ -38,3 +38,6 @@
 - `md`是Markdown预览
 - `<Ctrl>+A`是全选
 - `<Ctrl>+j/k/h/l`是`<Ctrl>+w+j/k/h/l`
+- `<space>`是`<leader>`
+- `<leader>+w`是强制保存
+- `<leader>+z`是强制保存并退出
