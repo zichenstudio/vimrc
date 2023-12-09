@@ -30,7 +30,6 @@
 
 ## Mappings
 
-- `<F7>`作为侧边栏
 - `<F2>`开关绝对行号
 - `<F3>`开关相对行号
 - `jk`是`<Esc>`
@@ -41,3 +40,4 @@
 - `<space>`是`<leader>`
 - `<leader>+w`是强制保存
 - `<leader>+z`是强制保存并退出
+- `<leader>+n`作为侧边栏(NERDTree)
