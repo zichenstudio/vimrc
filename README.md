@@ -41,4 +41,5 @@
 - `<leader>+w`是强制保存
 - `<leader>+z`是强制保存并退出
 - `<leader>+n`作为侧边栏(NERDTree)
-- `<Ctrl>+=`是分屏统一高度`<Ctrl>+w =`
+- `<leader>+=`是分屏统一高度`<Ctrl>+w =`
+- `<Ctrl>+n`是新建`:enew<CR>`
