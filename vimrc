@@ -201,5 +201,3 @@ noremap <leader>n :NERDTreeToggle<CR>
 noremap <leader>= <C-W>=
 " 绑定<Ctrl>+n为新建
 noremap <C-n> :enew<CR>
-" 绑定<leader>+c为关闭窗口
-noremap <leader>c <C-w>c

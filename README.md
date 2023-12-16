@@ -43,4 +43,3 @@
 - `<leader>+n`作为侧边栏(NERDTree)
 - `<leader>+=`是分屏统一高度`<Ctrl>+w =`
 - `<Ctrl>+n`是新建`:enew<CR>`
-- `<leader>+c`是关闭窗口`<Ctrl>+w c`
