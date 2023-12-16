@@ -199,3 +199,5 @@ noremap <leader>z :x!<CR>
 noremap <leader>n :NERDTreeToggle<CR>
 " 绑定<Ctrl>+W为分屏统一高度
 noremap <C-=> <C-W>=
+" 绑定<Ctrl>+n为新建
+noremap <C-n> :enew<CR>
