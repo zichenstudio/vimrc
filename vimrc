@@ -83,6 +83,10 @@ set clipboard=unnamed
 set visualbell
 " 光标在屏幕边缘留5行
 set scrolloff=5
+" 当文件被改动时自动载入
+set autoread
+" 关闭错误提示音
+set noerrorbells
 if has("gui_running")
     " Gvim字体
     set guifont=Hack:h11
