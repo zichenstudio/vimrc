@@ -102,6 +102,8 @@ if has("gui_running")
     " set guioptions-=m
     " 隐藏工具栏
     set guioptions-=T
+    " 设置 alt 键不映射到菜单栏
+    set winaltkeys=no
 endif
 "
 "==================================================
@@ -206,3 +208,5 @@ noremap <leader>= <C-W>=
 noremap <C-n> :enew<CR>
 " 绑定<leader>+f为删除空行，无论是否包含空格或Tab
 noremap <leader>f :%s/^\s*$\n//g<CR>
+" 绑定双击空格为:(在正常模式下)
+nnoremap <space><space> :
