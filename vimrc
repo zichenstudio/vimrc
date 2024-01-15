@@ -181,8 +181,6 @@ let mapleader="\<space>"
 noremap <F2> :set number!<CR>
 " 绑定<F3>键为切换相对行号开关的快捷键
 noremap <F3> :set relativenumber!<CR>
-" 输入模式下把jk换成<ESC>
-inoremap jk <Esc>
 " 绑定//为高亮开关
 noremap // :set hlsearch!<CR>
 " 搜索时自动打开高亮
@@ -210,3 +208,5 @@ noremap <C-n> :enew<CR>
 noremap <leader>f :%s/^\s*$\n//g<CR>
 " 绑定双击空格为:(在正常模式下)
 nnoremap <space><space> :
+" 绑定<Ctrl>+[为<ESC>
+noremap <C-[> <Esc>
