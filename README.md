@@ -5,7 +5,7 @@
 
 ## Fonts
 
-[Hack](https://github.com/source-foundry/Hack)
+[Hack Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts)
 
 ## Plugs
 
@@ -14,19 +14,25 @@
 使用了以下插件
 
 - [The NERDTree](https://github.com/preservim/nerdtree)
-- [lightline.vim](https://github.com/itchyny/lightline.vim)
+- [vim-airline](https://github.com/vim-airline/vim-airline)
+- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+- [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 - [indentLine](https://github.com/Yggdroot/indentLine)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [Auto Pairs](https://github.com/jiangmiao/auto-pairs)
 - [Rainbow Parentheses Improved](https://github.com/luochen1990/rainbow)
 - [vim-cursorword](https://github.com/itchyny/vim-cursorword)
+- [vim-snippets](https://github.com/honza/vim-snippets)
 - [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim)
+- [vim-devicons](https://github.com/ryanoasis/vim-devicons)
 
 ## ColorScheme
 
 - [Molokai](https://github.com/tomasr/molokai)
 
-我在配置中使用`colorscheme zaibatsu`并把`colorscheme molokai`注释了，你可以自己打开。
+~~我在配置中使用`colorscheme zaibatsu`并把`colorscheme molokai`注释了，你可以自己打开。~~
+现在正使用Molokai
 
 ## Mappings
 
@@ -45,3 +51,4 @@
 - `<leader>+f`是删除空行，无论是否包含空格或Tab`:%s/^\s*$\n//g<CR>`
 - `<space><space>`是:(正常模式下)
 - `<Ctrl>+[`是`<Esc>`
+- `<leader>+b`为下一个缓冲区`:bn<CR>`

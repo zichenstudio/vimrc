@@ -89,7 +89,7 @@ set autoread
 set noerrorbells
 if has("gui_running")
     " Gvim字体
-    set guifont=Hack:h11
+    set guifont=Hack\ Nerd\ Font\ Mono:h11
     " 隐藏左侧垂直滚动条
     set guioptions-=l
     " 隐藏右侧垂直滚动条
@@ -110,23 +110,33 @@ endif
 " 插件管理
 call plug#begin()
 Plug 'preservim/nerdtree'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'itchyny/vim-cursorword'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+Plug 'honza/vim-snippets'
 Plug 'tomasr/molokai'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 " 插件和主题的配置
 "
 "
 " 主题
-" colorscheme molokai
-colorscheme zaibatsu
+colorscheme molokai
+" colorscheme zaibatsu
 "
 " 插件
+"
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_theme = 'molokai'
 "
 " rainbow
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
@@ -143,26 +153,44 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:NERDTreeWinPos = "right"
 "
 " Coc配置
-set updatetime=1000
+set updatetime=100
 set shortmess+=c
-" <Tab>键自动补全
+set signcolumn=yes
+
 inoremap <silent><expr> <TAB>
-            \ coc#pum#visible() ? coc#pum#next(1) :
-            \ CheckBackspace() ? "\<Tab>" :
-            \ coc#refresh()
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-            \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 function! CheckBackspace() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-" 用使用 [g 和 ]g 来寻找上、下一个报错
-noremap <silent> [g <Plug>(coc-diagnostic-prev)
-noremap <silent> ]g <Plug>(coc-diagnostic-next)
-" 高亮鼠标所在的同一个词汇
-autocmd CursorHold * silent call CocActionAsync('highlight')
-" Coc.nvim自动安装插件
+
+" Use <c-space> to trigger completion
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-space> coc#refresh()
+endif
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Use <m-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<m-j>'
+
+" Use <m-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<m-k>'
+
 let g:coc_global_extensions = [
             \'coc-json',
             \'coc-vimlsp',
@@ -172,7 +200,7 @@ let g:coc_global_extensions = [
             \'coc-html',
             \'coc-css',
             \'coc-phpls',
-            \'coc-python',
+            \'coc-pyright',
             \'coc-snippets',
             \'coc-markdownlint']
 "
@@ -204,6 +232,7 @@ noremap <leader>z :x!<CR>
 noremap <leader>n :NERDTreeToggle<CR>
 " 绑定<Ctrl>+W为分屏统一高度
 noremap <leader>= <C-W>=
+noremap <leader>= <C-W>=
 " 绑定<Ctrl>+n为新建
 noremap <C-n> :enew<CR>
 " 绑定<leader>+f为删除空行，无论是否包含空格或Tab
@@ -212,3 +241,5 @@ noremap <leader>f :%s/^\s*$\n//g<CR>
 nnoremap <space><space> :
 " 绑定<Ctrl>+[为<ESC>
 noremap <C-[> <Esc>
+" 绑定<leader>+b为下一个缓冲区
+nnoremap <leader>b :bn<CR>
