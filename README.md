@@ -51,4 +51,4 @@
 - `<leader>+f`是删除空行，无论是否包含空格或Tab`:%s/^\s*$\n//g<CR>`
 - `<space><space>`是:(正常模式下)
 - `<Ctrl>+[`是`<Esc>`
-- `<leader>+b`为下一个缓冲区`:bn<CR>`
+- `<leader>+p`为下一个缓冲区`:bn<CR>`

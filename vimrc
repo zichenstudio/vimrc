@@ -241,5 +241,5 @@ noremap <leader>f :%s/^\s*$\n//g<CR>
 nnoremap <space><space> :
 " 绑定<Ctrl>+[为<ESC>
 noremap <C-[> <Esc>
-" 绑定<leader>+b为下一个缓冲区
-nnoremap <leader>b :bn<CR>
+" 绑定<leader>+p为下一个缓冲区
+nnoremap <leader>p :bn<CR>
