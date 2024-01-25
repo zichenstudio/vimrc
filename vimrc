@@ -123,6 +123,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' 
 Plug 'honza/vim-snippets'
 Plug 'tomasr/molokai'
 Plug 'ryanoasis/vim-devicons'
+Plug 'junegunn/vim-peekaboo'
 call plug#end()
 " 插件和主题的配置
 "

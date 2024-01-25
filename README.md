@@ -26,6 +26,7 @@
 - [vim-snippets](https://github.com/honza/vim-snippets)
 - [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim)
 - [vim-devicons](https://github.com/ryanoasis/vim-devicons)
+- [vim-peekaboo](https://github.com/junegunn/vim-peekaboo)
 
 ## ColorScheme
 
