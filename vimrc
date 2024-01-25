@@ -241,5 +241,9 @@ noremap <leader>f :%s/^\s*$\n//g<CR>
 nnoremap <space><space> :
 " 绑定<Ctrl>+[为<ESC>
 noremap <C-[> <Esc>
-" 绑定<leader>+p为下一个缓冲区
-nnoremap <leader>p :bn<CR>
+" 绑定<leader>+d为下一个缓冲区
+nnoremap <leader>d :bn<CR>
+" 绑定<leader>+p粘贴到下一行
+nnoremap <leader>p o<Esc>p
+" 绑定<leader>+P粘贴到上一行
+nnoremap <leader>P O<Esc>p
