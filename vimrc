@@ -6,7 +6,12 @@
 "    \ \__/ /      \ \__\\ \__\    \ \__\\ \__\\ _\ \ \_______\
 "     \|__|/        \|__| \|__|     \|__| \|__|\|__| \|_______|
 "--------------------------------------------------------------
+"
+"
+"==================================================
 " 基本
+"==================================================
+"
 "
 " 显示绝对行号
 set number
@@ -26,10 +31,6 @@ set tabstop=2
 set shiftwidth=2
 " Tab自动转为空格(防止配置造成的不兼容)
 set expandtab
-" Tab自动转为多少个空格
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
 " 编码识别顺序
 set encoding=utf8
 " 默认换行格式
@@ -87,6 +88,8 @@ set scrolloff=5
 set autoread
 " 关闭错误提示音
 set noerrorbells
+"==================================================
+" Gvim设置
 if has("gui_running")
     " Gvim字体
     set guifont=Hack\ Nerd\ Font\ Mono:h11
@@ -105,6 +108,37 @@ if has("gui_running")
     " 设置 alt 键不映射到菜单栏
     set winaltkeys=no
 endif
+" Gvim背景透明
+if has('win64')
+    autocmd GUIEnter * call libcallnr("vimtweak64.dll", "SetAlpha", 200)
+elseif has('win32')
+    autocmd GUIEnter * call libcallnr("vimtweak32.dll", "SetAlpha", 200)
+endif
+"
+"
+"==================================================
+" 文件配置
+"==================================================
+"
+"
+" JavaScript文件设置
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
+" Markdown文件设置
+autocmd FileType markdown setlocal tabstop=4 shiftwidth=4
+" CSS文件设置
+autocmd FileType css setlocal tabstop=2 shiftwidth=2
+" HTML文件设置
+autocmd FileType html setlocal tabstop=2 shiftwidth=2
+" Python文件设置
+autocmd FileType python setlocal tabstop=4 shiftwidth=4
+" Vim文件设置
+autocmd FileType vim setlocal tabstop=4 shiftwidth=4
+"
+"
+"==================================================
+" 插件和主题的配置
+"==================================================
+"
 "
 "==================================================
 " 插件管理
@@ -125,23 +159,26 @@ Plug 'tomasr/molokai'
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/vim-peekaboo'
 call plug#end()
-" 插件和主题的配置
 "
-"
+"==================================================
 " 主题
 colorscheme molokai
 " colorscheme zaibatsu
 "
+"==================================================
 " 插件
 "
+"==================================================
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_theme = 'molokai'
 "
+"==================================================
 " rainbow
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "
+"==================================================
 " NERDTree配置
 " 修改树的显示图标
 let g:NERDTreeDirArrowExpandable = '+'
@@ -153,6 +190,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " 右侧打开NERDTree
 let g:NERDTreeWinPos = "right"
 "
+"==================================================
 " Coc配置
 set updatetime=100
 set shortmess+=c
@@ -205,7 +243,12 @@ let g:coc_global_extensions = [
             \'coc-snippets',
             \'coc-markdownlint']
 "
-" 按键
+"
+"==================================================
+" 按键映射
+"==================================================
+"
+"
 " <leader>绑定
 let mapleader="\<space>"
 " 绑定<F2>键为切换绝对行号开关的快捷键
