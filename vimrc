@@ -110,9 +110,9 @@ if has("gui_running")
 endif
 " Gvim背景透明
 if has('win64')
-    autocmd GUIEnter * call libcallnr("vimtweak64.dll", "SetAlpha", 200)
+    autocmd GUIEnter * call libcallnr("vimtweak64.dll", "SetAlpha", 215)
 elseif has('win32')
-    autocmd GUIEnter * call libcallnr("vimtweak32.dll", "SetAlpha", 200)
+    autocmd GUIEnter * call libcallnr("vimtweak32.dll", "SetAlpha", 215)
 endif
 "
 "
@@ -122,17 +122,17 @@ endif
 "
 "
 " JavaScript文件设置
-autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " Markdown文件设置
-autocmd FileType markdown setlocal tabstop=4 shiftwidth=4
+autocmd FileType markdown setlocal tabstop=4 shiftwidth=4 softtabstop=4
 " CSS文件设置
-autocmd FileType css setlocal tabstop=2 shiftwidth=2
+autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " HTML文件设置
-autocmd FileType html setlocal tabstop=2 shiftwidth=2
+autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " Python文件设置
-autocmd FileType python setlocal tabstop=4 shiftwidth=4
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 " Vim文件设置
-autocmd FileType vim setlocal tabstop=4 shiftwidth=4
+autocmd FileType vim setlocal tabstop=4 shiftwidth=4 softtabstop=4
 "
 "
 "==================================================
@@ -291,3 +291,4 @@ nnoremap <leader>d :bn<CR>
 nnoremap <leader>p o<Esc>p
 " 绑定<leader>+P粘贴到上一行
 nnoremap <leader>P O<Esc>p
+
