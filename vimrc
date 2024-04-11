@@ -133,6 +133,8 @@ autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 " Vim文件设置
 autocmd FileType vim setlocal tabstop=4 shiftwidth=4 softtabstop=4
+" Txt文件设置
+autocmd FileType text setlocal wrap
 "
 "
 "==================================================
@@ -184,7 +186,7 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 " 打开vim时如果没有文件自动打开NERDTree
-autocmd vimenter * if !argc()|NERDTree|endif
+" autocmd vimenter * if !argc()|NERDTree|endif
 " 当NERDTree为剩下的唯一窗口时自动关闭
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " 右侧打开NERDTree
