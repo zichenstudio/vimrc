@@ -135,6 +135,8 @@ autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType vim setlocal tabstop=4 shiftwidth=4 softtabstop=4
 " Txt文件设置
 autocmd FileType text setlocal wrap
+" 设置文件为unix(LF)换行
+autocmd BufReadPost * set fileformat=unix
 "
 "
 "==================================================
