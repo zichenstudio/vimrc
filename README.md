@@ -1,4 +1,7 @@
 # VIMRC
+
+**我打算建立一个dotnet的储存库，并把此仓库的内容转到dotnet储存库来更新**
+
 大约在2023年4月，我开始使用Vim，这个储存库存储了我的配置。
 
 (因为习惯的原因，README文件可能更新不及时，如果你发现有些地方与VIMRC文件不符，可以[Issues](https://github.com/ZiChenStudio/vimrc/issues)或[Pull Requests](https://github.com/ZiChenStudio/vimrc/pulls))
