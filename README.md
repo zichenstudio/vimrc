@@ -1,6 +1,6 @@
 # VIMRC
 
-**我打算建立一个dotnet的储存库，并把此仓库的内容转到dotnet储存库来更新**
+**我打算建立一个[dotfiles](https://github.com/zichenstudio/dotfiles)的储存库，并把此仓库的内容转到dotfiles储存库来更新**
 
 大约在2023年4月，我开始使用Vim，这个储存库存储了我的配置。
 
